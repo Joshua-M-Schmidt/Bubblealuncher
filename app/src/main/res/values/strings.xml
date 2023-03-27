@@ -1,0 +1,127 @@
+<resources>
+    <string name="app_name">BubbleLauncher</string>
+    <string name="search">search</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="title_activity_hidden_apps">Hidden Apps</string>
+
+    <!-- General settings -->
+
+    <string name="pref_title_custom_background">Custom Background</string>
+    <string name="pref_description_custom_background">Choose if you want the app to use the system wallpaper or the standart black wallpaper</string>
+
+    <string name="pref_chose_wallpaper_button">Choose_Background</string>
+
+    <string name="pref_add_invisible_app_title">invisible_apps</string>
+    <string name="pref_add_invisible_app">Add invisible apps back to the screen</string>
+
+    <string name="pref_disable_app_icon_background">Disable/Enable app icon background</string>
+    <string name="pref_desc_disable_app_icon_background">Disable the app background</string>
+
+    <string name="pref_choose_app_icon_background">Use Custom app background color</string>
+    <string name="pref_choose_background_color">Choose custom background color</string>
+    <string name="pref_choose_app_icon_background_color">Custom app background color</string>
+    <string name="pref_desc_choose_app_icon_background">custom background color for all apps</string>
+    <string name="pref_scrollable_back_dialog">To enable you have to select a bigger wallpaper. Preferably a 4k desktop Wallpaper, as mobile wallpapers are to narrow</string>
+    <string name="pref_scrollable_back_dialog_choose">select new</string>
+    <string name="pref_scrollable_back_dialog_no">no</string>
+
+    <string name="pref_choose_raster_style">Choose custom style for raster</string>
+
+    <string name="title_choose_app_background_style">Choose bubble type</string>
+
+    <string name="app_icon_color_theme_title">Icon color scheme</string>
+
+    <string name="clock_size_title">Clock Layout</string>
+
+    <string name="bubble_size_title">Bubble size</string>
+
+    <string name="bubble_size_desc">Choose a px value for the size of the bubbles</string>
+
+    <string name="bubble_size_sumary">Choose a px value for the size of the bubbles</string>
+
+    <string name="bubble_size_key">bubble_size</string>
+
+    <string name="slide_1_title">Welcome</string>
+
+    <string name="slide_1_text">to bubblelauncher</string>
+
+    <string name="slide_2_title">Settings Mode</string>
+
+    <!-- change bubble size -->
+
+    <string name="slide_2_text">press long on the screen to get into the settings mode \nhere you can edit your apps and change settings</string>
+    <string name="slide_3_title">Move Apps</string>
+    <string name="slide_3_text">in settings mode tap on any app and drag it around</string>
+    <string name="slide_4_title">Remove Apps</string>
+
+    <!-- Welcome slides -->
+
+    <string name="slide_4_text">Tap on the little x to remove the app after taping on it in settings mode</string>
+    <string name="slide_5_title">Create Folders</string>
+
+    <string name="slide_5_text">Drag one app onto any other app or folder</string>
+    <string name="slide_6_title">Home Position</string>
+
+    <string name="slide_6_text">Just click on the anchor button in settings mode to set new home position</string>
+    <string name="APPWIDGET_HOST_ID">fhw92103ehwd8332jd</string>
+
+    <string name="app_back_color_chooser">App Icon Background</string>
+    <string name="title_activity_invisible_apps">InvisibleAppsActivity</string>
+
+    <string name="getPremiumActivityTitle">Get Premium</string>
+    <string name="title_activity_add_apps">AddAppsActivity</string>
+
+    <string name="title_activity_reset">ResetActivity</string>
+    <string name="search_bar_style_title">Search Bar</string>
+
+    <string-array name="rasterstyles">
+        <item>chessboard</item>
+        <item>honeycomb</item>
+    </string-array>
+
+    <string-array name="rasterstyles_val">
+        <item>chessboard</item>
+        <item>honeycomb</item>
+    </string-array>
+    <string-array name="search_bar_styles">
+        <item>classic</item>
+        <item>new</item>
+    </string-array>
+    <string-array name="search_bar_styles_val">
+        <item>classic</item>
+        <item>new</item>
+    </string-array>
+    <string-array name="app_background_style">
+        <item>circle</item>
+        <item>square</item>
+        <item>hexagon</item>
+        <item>circle-outline</item>
+        <item>square-outline</item>
+        <item>hexagon-outline</item>
+    </string-array>
+    <string-array name="app_icon_color_themes">
+        <item>pastel</item>
+        <item>grayscale</item>
+        <item>neon (classic)</item>
+    </string-array>
+    <string-array name="app_background_style_val">
+        <item>circle</item>
+        <item>square</item>
+        <item>hexagon</item>
+        <item>circle-outline</item>
+        <item>square-outline</item>
+        <item>hexagon-outline</item>
+    </string-array>
+    <string name="title_activity_folder_settings">Folders</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_badge_settings">BadgeSettingsActivity</string>
+
+</resources>
+

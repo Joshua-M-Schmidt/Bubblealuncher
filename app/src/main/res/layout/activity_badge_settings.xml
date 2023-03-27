@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/main_layout"
+    android:layout_marginRight="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_height="match_parent">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/wrapper_layout"
+            android:paddingTop="10dp"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:background="@drawable/back_drawable"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_margin="15dp"
+                android:padding="15dp"
+                android:id="@+id/appView_wrapper"
+                android:gravity="center">
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginRight="15dp"
+                android:id="@+id/editBadgeSettings">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/ic_notifications_black_24dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Edit Notification Permission"
+                        android:textSize="19dp"
+                        android:textColor="#fff"
+                        android:padding="15dp"
+                        android:gravity="bottom" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/ic_navigate_next_black_24dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/scrollable_wallpaper_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginRight="15dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Minimal Mode"
+                        android:textSize="19dp"
+                        android:textColor="#fff"
+                        android:paddingLeft="15dp"
+                        android:gravity="bottom"></TextView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Does not show the number, only a dot"
+                        android:textSize="14dp"
+                        android:textColor="#ACACAC"
+                        android:paddingLeft="15dp"
+                        android:gravity="bottom"></TextView>
+                </LinearLayout>
+                <androidx.appcompat.widget.SwitchCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/badge_minimal_mode"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginRight="15dp"
+                android:id="@+id/back_color">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/ic_palette_black_24dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Choose Color"
+                        android:textSize="19dp"
+                        android:textColor="#fff"
+                        android:padding="15dp"
+                        android:gravity="bottom" />
+                </LinearLayout>
+                <com.skydoves.colorpickerview.AlphaTileView
+                    android:id="@+id/alphaTileView"
+                    android:layout_alignRight="@id/color_next_button"
+                    android:layout_marginRight="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    app:tileSize="20"
+                    app:tileEvenColor="#FFFFFF"
+                    app:tileOddColor="#757575"/>
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:id="@+id/color_next_button"
+                    android:src="@drawable/ic_navigate_next_white" />
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

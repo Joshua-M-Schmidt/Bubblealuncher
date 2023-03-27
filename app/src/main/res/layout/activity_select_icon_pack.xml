@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00000000"
+    android:orientation="vertical">
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:id="@+id/icon_pack_list">
+    </ListView>
+    <androidx.cardview.widget.CardView
+        android:layout_weight="0"
+        android:layout_margin="15dp"
+        android:id="@+id/recommend"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:layout_marginTop="15dp"
+                android:textSize="25dp"
+                android:text="Recommendation"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:text="This launcher is with all GO launcher themes Compatible"/>
+            <Button
+                android:id="@+id/search"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:drawableRight="@drawable/search_white"
+                android:text="Search on Playstore" />
+>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:layout_marginTop="15dp"
+                android:text="You have no Iconpacks Installed so here a small selection"/>
+
+            <Button
+                android:id="@+id/applewatch"
+                android:drawableRight="@drawable/cloud_white"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:text="Applewatch Icons" />
+
+            <Button
+                android:id="@+id/round"
+                android:drawableRight="@drawable/cloud_white"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:text="Round Icons" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    <FrameLayout
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_weight="0"
+        android:layout_height="wrap_content"
+        android:background="#272727"
+        android:padding="15dp"
+        android:orientation="vertical">
+        <Button
+            android:enabled="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:id="@+id/next"
+            android:textColor="#ffffff"
+            android:text="next"
+            android:background="@null">
+        </Button>
+        <TextView
+            android:layout_gravity="left|center_vertical"
+            android:textSize="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:text="Choose an Icon Pack"/>
+    </FrameLayout>
+
+</LinearLayout>

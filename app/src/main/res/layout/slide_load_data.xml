@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_alignParentBottom="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000"
+    android:orientation="horizontal"
+    android:id="@+id/search_background"
+    android:gravity="center_vertical"
+    android:weightSum="1">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#9E000000">
+    </View>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="top"
+        android:paddingTop="50dp"
+        android:gravity="left"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorWhite"
+            android:textSize="30dp"
+            android:layout_marginBottom="20dp"
+            android:text="Load Apps"></TextView>
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/app_progress"
+            android:indeterminate="true"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:indeterminateTint="#0099FF"
+            android:progressTint="#0099FF"></ProgressBar>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="80dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="bottom"
+                android:id="@+id/app_loading_text"
+                android:textColor="@color/colorWhite"
+                android:textSize="15dp"
+                android:padding="10dp"
+                android:text=""></TextView>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/top_shadow">
+            </ImageView>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:scaleType="fitXY"
+                android:layout_gravity="bottom"
+                android:src="@drawable/bottom_shadow">
+            </ImageView>
+        </FrameLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

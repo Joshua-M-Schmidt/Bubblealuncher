@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_alignParentBottom="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000"
+    android:orientation="horizontal"
+    android:id="@+id/search_background"
+    android:gravity="center_vertical"
+    android:weightSum="1">
+    <GridView
+        android:clipToPadding="false"
+        android:paddingBottom="100dp"
+        android:paddingTop="110dp"
+        android:id="@+id/app_grid"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:columnWidth="60dp"
+        android:layout_weight="1"
+        android:numColumns="4"
+        android:verticalSpacing="10dp"
+        android:stretchMode="spacingWidthUniform"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorWhite"
+            android:paddingTop="50dp"
+            android:paddingLeft="30dp"
+            android:textSize="30dp"
+            android:id="@+id/appCounter"
+            android:background="#000"
+            android:paddingBottom="10dp"
+            android:text="Select Apps">
+        </TextView>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/top_shadow">
+        </ImageView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/bottom_shadow">
+        </ImageView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorWhite"
+            android:paddingTop="10dp"
+            android:paddingLeft="30dp"
+            android:textSize="30dp"
+            android:background="#000"
+            android:paddingBottom="10dp"
+            android:text=" ">
+        </TextView>
+
+    </LinearLayout>
+
+</FrameLayout>

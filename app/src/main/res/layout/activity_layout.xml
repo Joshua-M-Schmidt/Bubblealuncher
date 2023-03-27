@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/main_layout"
+    android:layout_marginRight="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:background="@drawable/back_drawable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:padding="15dp"
+        android:id="@+id/icon_wrapper"
+        android:gravity="center">
+    </RelativeLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/wrapper_layout"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/bubble_size_title"
+                android:textSize="16dp"
+                android:textColor="#fff"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="5dp"
+                android:text="Size"/>
+            <SeekBar
+                android:id="@+id/bubble_size"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="120"
+                android:min="10"
+                android:thumbOffset="-5dp"
+                android:progress="0"
+                android:splitTrack="false"
+                android:theme="@style/MySeekBar"
+                android:progressDrawable="@drawable/seekbar_progress"
+                android:thumb="@drawable/seekbar_thumb"
+                android:layout_marginBottom="20dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/bubble_padding_title"
+                android:textSize="16dp"
+                android:textColor="#fff"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="5dp"
+                android:text="Padding"/>
+            <SeekBar
+                android:id="@+id/bubble_padding"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="30"
+                android:thumbOffset="-5dp"
+                android:theme="@style/MySeekBar"
+                android:splitTrack="false"
+                android:progressDrawable="@drawable/seekbar_progress"
+                android:thumb="@drawable/seekbar_thumb"
+                android:layout_marginBottom="20dp"
+                android:progress="0" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginRight="15dp"
+                android:id="@+id/raster_style">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/ic_image_aspect_ratio_black_24dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Layout Type"
+                        android:textSize="19dp"
+                        android:textColor="#fff"
+                        android:padding="15dp"
+                        android:gravity="bottom" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/ic_navigate_next_white" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginRight="15dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hide Status bar"
+                        android:textSize="19dp"
+                        android:textColor="#fff"
+                        android:padding="15dp"
+                        android:gravity="bottom"></TextView>
+                </LinearLayout>
+                <androidx.appcompat.widget.SwitchCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/hide_status_bar"/>
+            </RelativeLayout>
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_alignParentBottom="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000"
+    android:orientation="horizontal"
+    android:id="@+id/search_background"
+    android:gravity="center_vertical"
+    android:weightSum="1">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/welcome">
+    </ImageView>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#9E000000">
+    </View>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textColor="@color/colorWhite"
+        android:textSize="50dp"
+        android:text="Hi"></TextView>
+</FrameLayout>

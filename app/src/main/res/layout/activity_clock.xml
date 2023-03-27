@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/main_layout"
+    android:layout_marginRight="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:background="@drawable/back_drawable"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_margin="15dp"
+        android:padding="15dp"
+        android:id="@+id/clock_wraper"
+        android:gravity="center">
+    </RelativeLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/wrapper_layout"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginRight="15dp"
+                android:id="@+id/icon_settings">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Show clock"
+                        android:textSize="19dp"
+                        android:textColor="#fff"
+                        android:padding="15dp"
+                        android:gravity="bottom"></TextView>
+                </LinearLayout>
+                <androidx.appcompat.widget.SwitchCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/show_clock"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginRight="15dp"
+                android:id="@+id/clock_layout">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/ic_image_aspect_ratio_black_24dp"></ImageView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Clock Layout"
+                        android:textSize="19dp"
+                        android:textColor="#fff"
+                        android:padding="15dp"
+                        android:gravity="bottom"></TextView>
+                </LinearLayout>
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/ic_navigate_next_white"></ImageView>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginRight="15dp"
+                android:id="@+id/back_color">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/ic_palette_black_24dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Clock color"
+                        android:textSize="19dp"
+                        android:textColor="#fff"
+                        android:padding="15dp"
+                        android:gravity="bottom" />
+                </LinearLayout>
+                <com.skydoves.colorpickerview.AlphaTileView
+                    android:id="@+id/alphaTileView"
+                    android:layout_alignRight="@id/color_next_button"
+                    android:layout_marginRight="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    app:tileSize="20"
+                    app:tileEvenColor="#FFFFFF"
+                    app:tileOddColor="#757575"/>
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:id="@+id/color_next_button"
+                    android:src="@drawable/ic_navigate_next_white" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginRight="15dp"
+                android:id="@+id/clock_shadow_color">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/ic_palette_black_24dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Shadow color"
+                        android:textSize="19dp"
+                        android:textColor="#fff"
+                        android:padding="15dp"
+                        android:gravity="bottom" />
+                </LinearLayout>
+                <com.skydoves.colorpickerview.AlphaTileView
+                    android:id="@+id/alphaTileViewShadow"
+                    android:layout_alignRight="@id/color_next_button_shadow"
+                    android:layout_marginRight="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    app:tileSize="20"
+                    app:tileEvenColor="#FFFFFF"
+                    app:tileOddColor="#757575"/>
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:id="@+id/color_next_button_shadow"
+                    android:src="@drawable/ic_navigate_next_white" />
+            </RelativeLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:textColor="#fff"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="5dp"
+                android:text="Shadow radius"/>
+            <SeekBar
+                android:id="@+id/shadow_radius"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="200"
+                android:min="0"
+                android:thumbOffset="-5dp"
+                android:progress="0"
+                android:splitTrack="false"
+                android:theme="@style/MySeekBar"
+                android:progressDrawable="@drawable/seekbar_progress"
+                android:thumb="@drawable/seekbar_thumb"
+                android:layout_marginBottom="20dp"/>
+
+            <RelativeLayout
+                android:id="@+id/clock_font"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/ic_image_aspect_ratio_black_24dp"></ImageView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="bottom"
+                        android:padding="15dp"
+                        android:text="Clock font"
+                        android:textColor="#fff"
+                        android:textSize="19dp"></TextView>
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/ic_navigate_next_white"></ImageView>
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

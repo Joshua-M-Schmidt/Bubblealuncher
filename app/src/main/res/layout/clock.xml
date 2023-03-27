@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/clock_wrapper"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+    <TextClock
+        android:id="@+id/clock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:gravity="center"
+        android:fontFamily="sans-serif-thin"
+        android:textFontWeight="400"
+        android:clipToPadding="false"
+        android:text="16:53"
+        android:textSize="90dp" />
+    <TextView
+        android:id="@+id/clock_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:gravity="center"
+        android:padding="5dp"
+        android:textSize="20dp"
+        android:text="Monday, Jan. 09,2012"
+        android:clipToPadding="false"
+        android:textColor="#ffffff"/>
+</LinearLayout>

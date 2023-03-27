@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/main_layout"
+    android:layout_marginRight="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:background="@drawable/back_drawable"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_margin="15dp"
+        android:padding="15dp"
+        android:id="@+id/icon_wrapper"
+        android:gravity="center">
+    </RelativeLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/wrapper_layout"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:textColor="#fff"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="5dp"
+                android:text="Saturation"/>
+            <SeekBar
+                android:id="@+id/bubble_saturation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="200"
+                android:min="0"
+                android:thumbOffset="-5dp"
+                android:progress="0"
+                android:splitTrack="false"
+                android:theme="@style/MySeekBar"
+                android:progressDrawable="@drawable/seekbar_progress"
+                android:thumb="@drawable/seekbar_thumb"
+                android:layout_marginBottom="20dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/bubble_shadow_size_title"
+                android:textSize="16dp"
+                android:textColor="#fff"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="5dp"
+                android:text="Shadow size"/>
+            <SeekBar
+                android:id="@+id/shadow_radius"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="50"
+                android:thumbOffset="-5dp"
+                android:theme="@style/MySeekBar"
+                android:splitTrack="false"
+                android:progressDrawable="@drawable/seekbar_progress"
+                android:thumb="@drawable/seekbar_thumb"
+                android:layout_marginBottom="20dp"
+                android:progress="0"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginRight="15dp"
+                android:id="@+id/icon_settings">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Crop icon to circle"
+                        android:textSize="19dp"
+                        android:textColor="#fff"
+                        android:padding="15dp"
+                        android:gravity="bottom"></TextView>
+                </LinearLayout>
+                <androidx.appcompat.widget.SwitchCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/crop_bubble"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginRight="15dp"
+                android:id="@+id/icon_pack_settings">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/ic_image_black_24dp"></ImageView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Icon Pack"
+                        android:textSize="19dp"
+                        android:textColor="#fff"
+                        android:padding="15dp"
+                        android:gravity="bottom"></TextView>
+                </LinearLayout>
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/ic_navigate_next_white"></ImageView>
+            </RelativeLayout>
+
+            <!--
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/use_custom_background_layout"
+            android:orientation="vertical">
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Use custom symbol background"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/use_custom_symbol_background"/>
+
+        </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/bubble_background_ration_layout"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/bubble_back_ratio_title"
+                    android:textSize="19dp"
+                    android:textColor="#fff"
+                    android:layout_margin="10dp"
+                    android:text="Bubble background ratio"/>
+                <SeekBar
+                    android:id="@+id/bubble_back_ratio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:max="100"
+                    android:progress="20" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/choose_symbol_back_color"
+                android:orientation="vertical">
+
+                <TextView android:id="@+id/chose_symbol_back_color_Title"
+                    android:text="Icon background Color"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:layout_marginLeft="15dip"
+                    android:layout_marginRight="6dip"
+                    android:layout_marginTop="6dip"
+                    android:layout_marginBottom="6dip"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:ellipsize="marquee"
+                    android:fadingEdge="horizontal" />
+
+                <TextView
+                    android:text="choose a custom icon backgorund color"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dip"
+                    android:layout_marginRight="6dip"
+                    android:layout_marginBottom="6dip"
+                    android:layout_below="@id/chose_symbol_back_color_Title"
+                    android:layout_alignLeft="@android:id/title"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:maxLines="2" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="#5e5e5e"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/custom_back_shape"
+                android:orientation="vertical">
+
+                <TextView
+                    android:text="Icon background shape"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:layout_marginLeft="15dip"
+                    android:layout_marginRight="6dip"
+                    android:layout_marginTop="6dip"
+                    android:layout_marginBottom="6dip"
+                    android:textSize="19dp"
+                    android:textColor="#fff"
+                    android:ellipsize="marquee"
+                    android:fadingEdge="horizontal" />
+
+                <TextView
+                    android:text="choose a custom icon shape color"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dip"
+                    android:layout_marginRight="6dip"
+                    android:layout_marginBottom="6dip"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:maxLines="2" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="#5e5e5e"/>
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/icon_color_scheme"
+                android:orientation="vertical">
+
+                <TextView
+                    android:text="Color scheme"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:layout_marginLeft="15dip"
+                    android:layout_marginRight="6dip"
+                    android:layout_marginTop="6dip"
+                    android:layout_marginBottom="6dip"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:ellipsize="marquee"
+                    android:fadingEdge="horizontal" />
+
+                <TextView
+                    android:text="choose different color schemes for the app symbols"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dip"
+                    android:layout_marginRight="6dip"
+                    android:layout_marginBottom="6dip"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:maxLines="2" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="#5e5e5e"/>
+            </LinearLayout>-->
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

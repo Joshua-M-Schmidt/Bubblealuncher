@@ -1,0 +1,129 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:key="preferenceScreen">
+
+    <source.nova.com.bubblelauncherfree.Util.PremiumPref
+        android:key="premiumPref"
+        android:title="Get Premium"
+        android:summary="get more customisation options"/>
+
+    <PreferenceCategory
+        android:title="general">
+        <Preference android:title="Hidden apps"
+            android:key="@string/pref_add_invisible_app"
+            android:summary="Add invisible apps back to the screen"/>
+        <Preference android:title="Reset/Theme"
+            android:key="reset_layout_theme"
+            android:summary="Set the layout for all apps and folders"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="style">
+        <Preference android:title="Iconpacks"
+            android:key="iconPacks"
+            android:summary="change the iconpack"/>
+        <Preference android:title="Clock"
+            android:key="clock"
+            android:summary="change the clock style and layout"/>
+        <Preference android:title="Searchbar"
+            android:key="searchbar"
+            android:summary="change search bar style and layout"/>
+        <Preference android:title="App Symbols/Layout"
+            android:key="icon"
+            android:summary="change app icons and layout"/>
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="wallpaper_key"
+            android:summary="@string/pref_description_custom_background"
+            android:title="@string/pref_title_custom_background" />
+        <Preference android:title="Wallpaper"
+            android:key="@string/pref_chose_wallpaper_button"
+            android:summary="Chose a system wallpaper"/>
+        <com.rarepebble.colorpicker.ColorPreference
+            android:key="background_color"
+            android:title="@string/pref_choose_background_color"
+            android:defaultValue="#000" />
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="display_folder_name"
+            android:summary="Folder Name"
+            android:title="Display the folder name" />
+    </PreferenceCategory>
+        <!--
+        <ListPreference
+            android:key="search_bar_style"
+            android:title="@string/search_bar_style_title"
+            android:entries="@array/search_bar_styles"
+            android:entryValues="@array/search_bar_styles_val"/>
+        <com.yokkomi.commons.preference.seekbar.SeekBarPreference
+            android:defaultValue="70"
+            android:key="bubble_size"
+            android:summary="@string/bubble_size_sumary"
+            android:title="@string/bubble_size_title"
+            app:explain="@string/bubble_size_desc"
+            app:maxValue="150"
+            app:padding="50"
+            app:unit="px" />
+
+        <com.yokkomi.commons.preference.seekbar.SeekBarPreference
+            android:defaultValue="70"
+            android:key="bubble_padding_key"
+            android:summary="Chose a px value for the padding between the bubbles"
+            android:title="Bubble padding"
+            app:explain="Chose a px value for the padding between the bubbles"
+            app:maxValue="50"
+            app:unit="px" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="premium_category"
+        android:enabled="false"
+        android:title="premium">
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="disable_app_background"
+            android:summary="@string/pref_desc_disable_app_icon_background"
+            android:title="@string/pref_disable_app_icon_background" />
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="custom_app_background"
+            android:summary="@string/pref_desc_choose_app_icon_background"
+            android:title="@string/pref_choose_app_icon_background" />
+
+        <com.rarepebble.colorpicker.ColorPreference
+            android:key="app_background_color"
+            android:title="@string/pref_choose_app_icon_background_color"
+            android:defaultValue="#f00" />
+
+        <ListPreference
+            android:key="raster_style"
+            android:title="@string/pref_choose_raster_style"
+            android:entries="@array/rasterstyles"
+            android:entryValues="@array/rasterstyles_val"/>
+
+        <ListPreference
+            android:key="app_icon_style"
+            android:title="@string/title_choose_app_background_style"
+            android:entries="@array/app_background_style"
+            android:entryValues="@array/app_background_style_val"/>
+
+        <ListPreference
+            android:key="app_icon_color_theme"
+            android:title="@string/app_icon_color_theme_title"
+            android:entries="@array/app_icon_color_themes"
+            android:entryValues="@array/app_icon_color_themes"/>
+
+        <com.yokkomi.commons.preference.seekbar.SeekBarPreference
+            android:defaultValue="70"
+            android:key="icon_background_ratio"
+            android:summary="Choose the size of the icon in relation of the iconbackground"
+            android:title="Icon - Background ratio"
+            app:explain="Choose the size of the icon in relation to the iconbackground"
+            app:maxValue="100"
+            app:padding="50"
+            app:unit="%" />
+    </PreferenceCategory>
+    -->
+</PreferenceScreen>

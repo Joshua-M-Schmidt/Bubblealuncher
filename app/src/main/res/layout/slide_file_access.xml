@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_alignParentBottom="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000"
+    android:orientation="horizontal"
+    android:id="@+id/search_background"
+    android:gravity="center_vertical"
+    android:weightSum="1">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#9E000000">
+    </View>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical">
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:shadowColor="#E2B45F"
+                android:shadowRadius="5"
+                android:id="@+id/contacts_image"
+                android:src="@drawable/ic_folder">
+            </ImageView>
+            <source.nova.com.bubblelauncherfree.CustomViews.MaterialBadgeTextView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="right"
+                android:id="@+id/badge">
+            </source.nova.com.bubblelauncherfree.CustomViews.MaterialBadgeTextView>
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/colorWhite"
+            android:textSize="30dp"
+            android:padding="10dp"
+            android:text="Filesystem"></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/colorWhite"
+            android:textSize="20dp"
+            android:textAlignment="center"
+            android:text="to make this app work properly\n we need to access the filesystem\nto save settings"></TextView>
+        <Button
+            android:layout_margin="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/permit_files"
+            android:background="#E2B45F"
+            android:shadowColor="#E2B45F"
+            android:shadowRadius="5"
+            android:text="Permit">
+        </Button>
+    </LinearLayout>
+
+</FrameLayout>

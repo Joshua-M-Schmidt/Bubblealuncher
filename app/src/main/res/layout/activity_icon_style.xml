@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="#00000000"
+android:orientation="vertical">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/generated_circle">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/generated_circle_style"></ImageView>
+                <TextView
+                    android:background="@drawable/gradient"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="generated circles"
+                    android:textSize="25dp"
+                    android:textColor="#fff"
+                    android:layout_alignParentBottom="true"
+                    android:padding="15dp"
+                    android:gravity="bottom"></TextView>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/device_style">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/device_style"></ImageView>
+                <TextView
+                    android:background="@drawable/gradient"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="device style"
+                    android:textSize="25dp"
+                    android:textColor="#fff"
+                    android:layout_alignParentBottom="true"
+                    android:padding="15dp"
+                    android:gravity="bottom"></TextView>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/icon_pack_style">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/icon_pack"></ImageView>
+                <TextView
+                    android:background="@drawable/gradient"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="recomended icon pack"
+                    android:textSize="25dp"
+                    android:textColor="#fff"
+                    android:layout_alignParentBottom="true"
+                    android:padding="15dp"
+                    android:gravity="bottom"></TextView>
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+<FrameLayout
+    android:layout_gravity="bottom"
+    android:layout_width="match_parent"
+    android:layout_weight="0"
+    android:layout_height="wrap_content"
+    android:background="#272727"
+    android:padding="15dp"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:textColor="#ffffff"
+        android:id="@+id/count"
+        android:text="Choose Style"/>
+</FrameLayout>
+</LinearLayout>
