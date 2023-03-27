@@ -7,12 +7,13 @@
 This app is an simple home launcher for android that organizes all apps into one single screen by giving you 
 a two dimensional map with folders.
 
-<img src="https://github.com/Joshua-M-Schmidt/Bubblealuncher/blob/main/assets/Google%20Pixel%204%20Screenshot%200.png?raw=true"
+</br>
+</br>
+
+<img src="https://github.com/Joshua-M-Schmidt/Bubblealuncher/blob/main/assets/presentation.png?raw=true"
 align="right"
   alt="Screenshot of AudioLibrary"
-  width="190" height="380">
-
-
+  width="800" height="290">
 
 **currently available on Google Play**
 
