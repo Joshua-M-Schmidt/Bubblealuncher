@@ -1,18 +1,18 @@
-# Bubblelauncher #
 
-<img src="https://github.com/Joshua-M-Schmidt/AudioLibrary/blob/main/assets/play_store_512.png?raw=true" align="right"
-     alt="Size Limit logo by Anton Lovchikov" width="100" height="100">
+<img src="https://github.com/Joshua-M-Schmidt/Bubblealuncher/blob/main/assets/play_store_512.png?raw=true" align="right"
+     alt="Bubblelauncher Logo" width="100" height="100">
 
 # Bubblelauncher 
 
 This app is an simple home launcher for android that organizes all apps into one single screen by giving you 
 a two dimensional map with folders.
 
-
-<img src="https://github.com/Joshua-M-Schmidt/AudioLibrary/blob/main/assets/play_store_512.png?raw=true"
+<img src="https://github.com/Joshua-M-Schmidt/Bubblealuncher/blob/main/assets/Google%20Pixel%204%20Screenshot%200.png?raw=true"
 align="right"
   alt="Screenshot of AudioLibrary"
-  width="170" height="280">
+  width="190" height="380">
+
+
 
 **currently available on Google Play**
 
