@@ -13,7 +13,7 @@ a two dimensional map with folders.
 <img src="https://github.com/Joshua-M-Schmidt/Bubblealuncher/blob/main/assets/presentation.png?raw=true"
 align="right"
   alt="Screenshot of AudioLibrary"
-  width="1000" height="290">
+  width="1000" height="300">
 
 **currently available on Google Play**
 
