@@ -7,6 +7,7 @@
 This app is an simple home launcher for android that organizes all apps into one single screen by giving you 
 a two dimensional map with folders.
 
+
 </br>
 </br>
 
@@ -14,6 +15,15 @@ a two dimensional map with folders.
 align="right"
   alt="Screenshot of AudioLibrary"
   width="1000" height="300">
+
+# todo
+
+&#x2610; Fix Widget Support </br>
+&#x2610; Frame layout does not fill screen completely
+
+</br>
+
+# links
 
 **currently available on Google Play**
 
@@ -27,9 +37,9 @@ align="right"
 
 [![Twitter](https://img.shields.io/badge/Twitter-%231DA1F2.svg?style=for-the-badge&logo=Twitter&logoColor=white)](https://twitter.com/WrngPhilosophr)
 
+</br>
 
-
-## Contributing
+# Contributing
 
 Pull requests are welcome. For major changes, please open an issue first
 to discuss what you would like to change.
