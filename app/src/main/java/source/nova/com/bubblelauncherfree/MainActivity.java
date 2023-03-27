@@ -184,9 +184,6 @@ public class MainActivity extends AppCompatActivity{
     private ImageView background_image;
     private TwoDScrollView scroller;
 
-    private int deletebuttonsize = 75;
-    private int deletebuttonpadding = 25;
-
     //folder stuff
     private RelativeLayout folderOverlay;
     public boolean folderOpen = false;
@@ -220,7 +217,7 @@ public class MainActivity extends AppCompatActivity{
 
     public static boolean DEBUG_APP_POSITIONS = true;
 
-    public static boolean IS_PREMIUM = false;
+    public static boolean IS_PREMIUM = true;
 
     private AppManager appManager;
 
@@ -351,7 +348,6 @@ public class MainActivity extends AppCompatActivity{
     private FloatingActionButton printThemeButton;
     public static final boolean DEBUG = true;
 
-    private static final String TAG = "LoadingAct";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -359,41 +355,22 @@ public class MainActivity extends AppCompatActivity{
 
         Log.i("lifecycle", "oncreate");
         shouldExecuteOnResume = false;
-        //Log.i("LoadingAct","first_use "+checkFirstUse(getApplicationContext()));
-        //Log.i("LoadingAct","is configured "+isConfigured(getApplicationContext()));
 
-        /*LaunchHelper.setTutorialWatched(getApplicationContext(),false);
-        LaunchHelper.setFirstUse(getApplicationContext(),false);
-        LaunchHelper.setLayoutSelected(getApplicationContext(),"");
-
-        setFirstUse(this,false);*/
+        // check if the first time app is used
 
         firstUse = PreferenceManager.getDefaultSharedPreferences(this).getBoolean(WelcomeActivty.KEY_FIRST_USE,true);
 
-        //firstUse = true;
-
-        if(firstUse){
+        if(firstUse){ // if not start the welcome activity
             Intent intent = new Intent(this,  WelcomeActivty.class);
             startActivity(intent);
         }else {
-            IS_PREMIUM = checkPremium(this);
-
-            //Intent intent = new Intent(this,  SearchbarActivity.class);
-            //startActivity(intent);
-
-            //Log.i("LoadingAct","is configured "+isConfigured(getApplicationContext()));
-
 
             setContentView(R.layout.activity_main);
-
-
-            //startActivity(new Intent(getApplicationContext(),SearchBarSettings.class));
 
             slidingUpPanelLayout = findViewById(R.id.sliding_layout);
             slidingUpPanelLayout.setTouchEnabled(true);
             slidingUpPanelLayout.setScrollableViewHelper(new NestedScrollableViewHelper());
             slidingUpPanelLayout.setNestedScrollingEnabled(true);
-
 
             all_layout = findViewById(R.id.all_container);
 
@@ -567,6 +544,7 @@ public class MainActivity extends AppCompatActivity{
                     startActivity(intent);
                 }
             });
+
         }
     }
 
@@ -575,12 +553,9 @@ public class MainActivity extends AppCompatActivity{
 
     private void initClockOjbects(){
         display_clock = PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getBoolean(ClockSettingActivity.SHOW_CLOCK_KEY,false);
-        Log.i("show clock",display_clock+" ");
 
         if(display_clock){
             if(clock != null){
-                Log.i("show clock","clock is initialized");
-                Log.i("show clock","is clock shown "+ clock.isShown());
 
                 if(clock.getParent() == null){
                     //clock = new Clock(getApplicationContext(),asize,padding);
@@ -1120,8 +1095,11 @@ public class MainActivity extends AppCompatActivity{
                 settingsButton.show();
                 anchorButton.show();
                 //updateButton.setVisibility(View.VISIBLE);
-                if(IS_PREMIUM)
-                    add_widget_button.show();
+
+                // don't show until provlem with widgets is solved
+                if(IS_PREMIUM){
+                    //add_widget_button.show();
+                }
 
                 if(!checkPremium(getApplicationContext())){
                     if(!IS_PREMIUM){
@@ -1195,8 +1173,9 @@ public class MainActivity extends AppCompatActivity{
                 settingsButton.show();
                 anchorButton.show();
                 //updateButton.setVisibility(View.VISIBLE);
-                if(IS_PREMIUM)
-                    add_widget_button.show();
+                if(IS_PREMIUM) { // dont show until problem with widgets is solved
+                    //add_widget_button.show();
+                }
 
                 if(!checkPremium(getApplicationContext())){
                     if(!IS_PREMIUM){
@@ -3856,8 +3835,9 @@ public class MainActivity extends AppCompatActivity{
             @Override
             public void onLongPress() {
                 anchorButton.show();
-                if(IS_PREMIUM)
-                    add_widget_button.show();
+                if(IS_PREMIUM){ // don't show until problem with widgets is solved
+                    //add_widget_button.show();
+                }
                 toggleSettingsMode();
             }
         });
@@ -3937,6 +3917,7 @@ public class MainActivity extends AppCompatActivity{
                     File directory = cw.getDir("imageDir", Context.MODE_PRIVATE);
                     File f=new File(directory, "profile.jpg");
                     Bitmap b = BitmapFactory.decodeStream(new FileInputStream(f));
+
                     FrameLayout.LayoutParams lp = new FrameLayout.LayoutParams(
                             500,500);
                     image.setLayoutParams(lp);
@@ -5024,245 +5005,6 @@ public class MainActivity extends AppCompatActivity{
     boolean scroll = true;
     boolean widgetNotTouchable = true;
 
-/*
-    @Override
-    public boolean onTouchEvent(MotionEvent event) {
-
-        setWidgetsUnclickable(widgetNotTouchable);
-
-        if(isViewTouched(event) && event.getAction() != MotionEvent.ACTION_MOVE){
-            return false;
-        }
-
-        this.mDetector.onTouchEvent(event);
-
-        // get pointer index from the event object
-        int pointerIndex = event.getActionIndex();
-
-        // get pointer ID
-        int pointerId = event.getPointerId(pointerIndex);
-        Log.i("pointer","id: "+pointerId+" index: "+pointerIndex);
-
-        float curX, curY;
-
-        MotionEvent.PointerCoords coords1 = new MotionEvent.PointerCoords();
-        MotionEvent.PointerCoords coords2 = new MotionEvent.PointerCoords();
-
-        if (settingsMode) {
-
-            // drag app in folderOverlay
-
-            if (folderOpen) {
-                for (int i = 0; i < currentlyInFolderOverlay.size(); i++) {
-                    Rect outRect = new Rect( (currentlyInFolderOverlay.get(i).getLeft()),
-                             (currentlyInFolderOverlay.get(i).getTop()),
-                             (currentlyInFolderOverlay.get(i).getRight()),
-                             (currentlyInFolderOverlay.get(i).getBottom()));
-
-                    if (outRect.contains((int) (event.getX()) + hScroll.getScrollX(), (int) ((event.getY())) + vScroll.getScrollY())) {
-                        if (currentlyInFolderOverlay.get(i).getAppPackage().equals(inEditModeAppPackage)) {
-
-                            folderOverlay.setVisibility(View.GONE);
-
-                            // create drag obj
-
-                            ClipData data = ClipData.newPlainText(currentlyInFolderOverlay.get(i).getAppPackage(), "");
-                            data.addItem(new ClipData.Item(currentlyInFolderOverlay.get(i).getAppPackage()));
-                            View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(
-                                    currentlyInFolderOverlay.get(i));
-                            shadowBuilder.getView().setAlpha(1f);
-
-
-                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                                currentlyInFolderOverlay.get(i).startDragAndDrop(data, shadowBuilder, currentlyInFolderOverlay.get(i), 0);
-                            } else {
-                                currentlyInFolderOverlay.get(i).startDrag(data, shadowBuilder, currentlyInFolderOverlay.get(i), 0);
-                            }
-
-
-                            dragging = true;
-
-                            deleteButton.setVisibility(View.GONE);
-                        }
-                    }
-                }
-
-
-            } else {
-
-                // drag folder in layout
-
-                for (int i = 0; i < folders.size(); i++) {
-                    Rect outRect = new Rect((int) (folders.get(i).getLeft()),
-                            (int) (folders.get(i).getTop()),
-                            (int) (folders.get(i).getRight()),
-                            (int) (folders.get(i).getBottom()));
-
-                    if (outRect.contains((int) (event.getX()) + hScroll.getScrollX(), (int) ((event.getY())) + vScroll.getScrollY())) {
-                        if (folders.get(i).getFolderName().equals(inEditModeAppPackage)) {
-
-                            folders.get(i).setVisibility(View.INVISIBLE);
-
-                            // create drag object
-
-                            ClipData data = ClipData.newPlainText(folders.get(i).getFolderName(), "");
-                            data.addItem(new ClipData.Item(folders.get(i).getFolderName()));
-                            View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(
-                                    folders.get(i));
-                            shadowBuilder.getView().setAlpha(1f);
-
-                            dragging = true;if (event.getPointerCount() == 2) {
-
-                }
-
-                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                                folders.get(i).startDragAndDrop(data, shadowBuilder, folders.get(i), 0);
-                            } else {
-                                folders.get(i).startDrag(data, shadowBuilder, folders.get(i), 0);
-                            }
-                        }
-                    }
-                }
-
-                // drag app in layout
-
-                for (int i = 0; i < apps.size(); i++) {
-                    Rect outRect = new Rect((int) (apps.get(i).getLeft()),
-                            (int) (apps.get(i).getTop()),
-                            (int) (apps.get(i).getRight()),
-                            (int) (apps.get(i).getBottom()));
-
-                    if (outRect.contains((int) (event.getX()) + hScroll.getScrollX(), (int) ((event.getY())) + vScroll.getScrollY())) {
-                        if (apps.get(i).getAppPackage().equals(inEditModeAppPackage)) {
-
-                            apps.get(i).setVisibility(View.INVISIBLE);
-
-                            // create drag object
-
-                            ClipData data = ClipData.newPlainText(apps.get(i).getAppPackage(), "");
-                            data.addItem(new ClipData.Item(apps.get(i).getAppPackage()));
-                            View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(
-                                    apps.get(i));
-                            shadowBuilder.getView().setAlpha(1f);
-
-                            dragging = true;
-
-                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                                apps.get(i).startDragAndDrop(data, shadowBuilder, apps.get(i), 0);
-                            } else {
-                                apps.get(i).startDrag(data, shadowBuilder, apps.get(i), 0);
-                            }
-                        }
-                    }
-                }
-
-                // drag view in layout
-
-
-                View v = getViewTouched(event);
-                if(v != null){
-                    if(inEditModeAppPackage == String.valueOf(v.getTag())){
-                        Log.i("____view", "in edit mode  "+inEditModeAppPackage);
-                        ClipData data = ClipData.newPlainText(String.valueOf(v.getTag()), "");
-                        data.addItem(new ClipData.Item(String.valueOf(v.getTag())));
-                        View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(
-                                v);
-                        shadowBuilder.getView().setAlpha(1f);
-
-                        dragging = true;
-
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                            v.startDragAndDrop(data, shadowBuilder, v, 0);
-                        } else {
-                            v.startDrag(data, shadowBuilder, v, 0);
-                        }
-                    }
-                }
-
-            }
-        }
-
-        switch (event.getAction() & MotionEvent.ACTION_MASK) {
-            case MotionEvent.ACTION_POINTER_DOWN:
-            case MotionEvent.ACTION_DOWN:
-                event.getPointerCoords(0, coords1);
-
-                if (event.getPointerCount() == 2) {
-                    scroll = false;
-                    event.getPointerCoords(1, coords2);
-                    dist = spaceBetweentPoints(coords1, coords2);
-
-                }
-
-                if (scroll) {
-
-                    movedx = event.getX();
-                    movedy = event.getY();
-                    mx = event.getX();
-                    my = event.getY();
-                }
-
-                Log.i("intersecting with view",intersectWithView(event)+"");
-                break;
-            case MotionEvent.ACTION_MOVE:
-
-                if (scroll) {
-                    //scrolling stuff
-                    if(!isViewTouched(event)){
-                        curX = event.getX();
-                        curY = event.getY();
-                        vScroll.scrollBy((int) (mx - curX), (int) (my - curY));
-                        hScroll.scrollBy((int) (mx - curX), (int) (my - curY));
-                        mx = curX;
-                        my = curY;
-                    }
-
-                }
-
-                if (event.getPointerCount() == 2) {
-
-                } else if (event.getPointerCount() == 1) {
-                    scroll = true;
-                }
-
-                if (!settingsMode) {
-                    Log.i("call checkScale", "from: " + "onmove");
-                    checkScale();
-                }
-            case MotionEvent.ACTION_UP:
-
-                if (mHandler != null) {
-                    mHandler.removeCallbacks(scroll_animation);
-                    autoscrolling = false;
-                }
-
-                if (scroll) {
-                    if(!isViewTouched(event)) {
-                        curX = event.getX();
-                        curY = event.getY();
-                        vScroll.scrollBy((int) (mx - curX), (int) (my - curY));
-                        hScroll.scrollBy((int) (mx - curX), (int) (my - curY));
-                    }
-                }
-
-                break;
-            case MotionEvent.ACTION_POINTER_UP:
-                if (mHandler != null) {
-                    mHandler.removeCallbacks(scroll_animation);
-                    autoscrolling = false;
-                }
-
-
-                break;
-        }
-
-        if (event.getAction() == 1) {
-            scroll = true;
-        }
-
-        return true;
-    }
-*/
     private int spaceBetweentPoints(MotionEvent.PointerCoords p1,
                                     MotionEvent.PointerCoords p2) {
         double w = p1.x - p2.x;

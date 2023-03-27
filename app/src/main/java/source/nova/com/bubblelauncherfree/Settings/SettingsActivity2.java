@@ -38,7 +38,7 @@ public class SettingsActivity2 extends AppCompatActivity {
     private static final String PREMIUM_KEY ="premium_key";
 
     public static boolean checkPremium(Context ctx){
-        return PreferenceManager.getDefaultSharedPreferences(ctx).getBoolean(PREMIUM_KEY,false);
+        return PreferenceManager.getDefaultSharedPreferences(ctx).getBoolean(PREMIUM_KEY,true);
         //return true;
     }
 

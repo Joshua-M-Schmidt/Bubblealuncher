@@ -1158,9 +1158,17 @@ public class AppManager {
                         Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED
         );
 
-        List<ResolveInfo> appInfoList = ctx
-                .getPackageManager()
-                .queryIntentActivities(i,0);
+        List<ResolveInfo> appInfoList = null;
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            appInfoList = ctx
+                    .getPackageManager()
+                    .queryIntentActivities(i,PackageManager.ResolveInfoFlags.of(PackageManager.MATCH_ALL));
+        }else{
+           appInfoList = ctx
+                    .getPackageManager()
+                    .queryIntentActivities(i,0);
+        }
+
 
         Log.i("list info", appInfoList.size()+"");
 
@@ -1863,7 +1871,7 @@ public class AppManager {
             } else if (drawable instanceof AdaptiveIconDrawable) {
                 Drawable backgroundDr = null;
 
-                    backgroundDr = ((AdaptiveIconDrawable) drawable).getBackground();
+                backgroundDr = ((AdaptiveIconDrawable) drawable).getBackground();
 
                 Drawable foregroundDr = ((AdaptiveIconDrawable) drawable).getForeground();
 
@@ -1873,6 +1881,8 @@ public class AppManager {
 
                 if(drr[0] != null){
                     drr[0] = new BitmapDrawable(ctx.getResources(),getCroppedBitmap(drawableToBitmap(drr[0]),ctx));
+                }else{
+                    Log.i("get icon", "no background available");
                 }
 
                 LayerDrawable layerDrawable = new LayerDrawable(drr);
@@ -1884,8 +1894,17 @@ public class AppManager {
 
                 Canvas canvas = new Canvas(bitmap);
 
+
+                Paint p = new Paint();
+                p.setColor(Color.WHITE);
+                p.setAlpha(100);
+
+                canvas.drawRect(0,0,canvas.getWidth(), canvas.getHeight(),p);
+
+
                 layerDrawable.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
                 layerDrawable.draw(canvas);
+
 
 
                 return bitmap;
@@ -1917,25 +1936,23 @@ public class AppManager {
 
     public static Bitmap getCroppedBitmap(Bitmap bitmap, Context ctx) {
         if(PreferenceManager.getDefaultSharedPreferences(ctx).getBoolean(BUBBLE_CROP,true)){
-            Bitmap output = Bitmap.createBitmap(bitmap.getWidth(),
-                    bitmap.getHeight(), Bitmap.Config.ARGB_8888);
-            Canvas canvas = new Canvas(output);
 
-            final int color = 0xff424242;
-            final Paint paint = new Paint();
-            final Rect rect = new Rect(0, 0, bitmap.getWidth(), bitmap.getHeight());
+            final int width = bitmap.getWidth();
+            final int height = bitmap.getHeight();
+            final Bitmap outputBitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
 
-            paint.setAntiAlias(true);
-            canvas.drawARGB(0, 0, 0, 0);
-            paint.setColor(color);
-            // canvas.drawRoundRect(rectF, roundPx, roundPx, paint);
-            canvas.drawCircle(bitmap.getWidth() / 2, bitmap.getHeight() / 2,
-                    (int)(bitmap.getWidth() / 2.2), paint);
-            paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
-            canvas.drawBitmap(bitmap, rect, rect, paint);
-            //Bitmap _bmp = Bitmap.createScaledBitmap(output, 60, 60, false);
-            //return _bmp;
-            return updateSat(output,(PreferenceManager.getDefaultSharedPreferences(ctx).getFloat(BUBBLE_SATURATION,1.0F)));
+            final Path path = new Path();
+            path.addCircle(
+                    (float)(width / 2)
+                    , (float)(height / 2)
+                    , (float) Math.min(width, (height / 2.2))
+                    , Path.Direction.CCW);
+
+            final Canvas canvas = new Canvas(outputBitmap);
+            canvas.clipPath(path);
+            canvas.drawBitmap(bitmap, 0, 0, null);
+
+            return updateSat(outputBitmap,(PreferenceManager.getDefaultSharedPreferences(ctx).getFloat(BUBBLE_SATURATION,1.0F)));
         }else{
             return updateSat(bitmap,(PreferenceManager.getDefaultSharedPreferences(ctx).getFloat(BUBBLE_SATURATION,1.0F)));
         }
