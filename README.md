@@ -14,7 +14,7 @@ a two dimensional map with folders.
 <img src="https://github.com/Joshua-M-Schmidt/Bubblealuncher/blob/main/assets/presentation.png?raw=true"
 align="right"
   alt="Screenshot of AudioLibrary"
-  width="1000" height="300">
+  width="100%" height="100%">
 
 # todo
 
