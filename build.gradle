@@ -3,6 +3,9 @@
 buildscript {
     repositories {
         jcenter()
+        google()
+        mavenCentral()
+        maven {url "https://artifactory.appodeal.com/appodeal-public"}
         maven {
             url 'https://maven.google.com/'
             name 'Google'
@@ -21,6 +24,9 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
+        google()
+        mavenCentral()
+        maven {url "https://artifactory.appodeal.com/appodeal-public"}
         maven { url "https://jitpack.io" }
         maven {
             url 'https://maven.google.com/'
